@@ -1,0 +1,23 @@
+# LaTeX intermediate files
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.dvi
+*.lof
+*.lot
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+_minted*
+*.nav
+*.snm
+*.vrb
+
+tmp/
+
+# Generated PDF files
+# You may want to uncomment the following line if you generate PDFs
+# *.pdf

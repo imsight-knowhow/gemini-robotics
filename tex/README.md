@@ -1,0 +1,1 @@
+latex source for the reading notes and ppts

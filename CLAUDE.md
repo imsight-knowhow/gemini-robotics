@@ -38,6 +38,10 @@ Always check the context directory for existing knowledge before starting new re
 - Content focuses on educational exploration of Gemini Robotics technologies
 - The project is not affiliated with Google or DeepMind
 
+## LaTeX Development Notes
+
+- When using `pdflatex`, make it possible for tracing back from pdf to latex source code
+
 ## Key References
 
 - Google DeepMind Blog: https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/
