@@ -7,7 +7,10 @@
       "mcp__markdownify__webpage-to-markdown",
       "Bash(chmod:*)",
       "WebFetch(domain:arxiv.org)",
-      "mcp__markdownify__pdf-to-markdown"
+      "mcp__markdownify__pdf-to-markdown",
+      "Bash(powershell:*)",
+      "Bash(find:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }

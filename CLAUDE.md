@@ -14,12 +14,19 @@ This is a learning and research project focused on surveying Google's Gemini Rob
 
 ## Repository Structure
 
-This is a documentation-focused repository with minimal code structure. The main content is organized around research and documentation of Gemini Robotics concepts rather than active development.
+This is a documentation-focused repository organized around research and documentation of Gemini Robotics concepts. The architecture follows a knowledge-first approach optimized for systematic research exploration.
 
-### Context Directory
+### Core Architecture
 
-The `context/` directory serves as a centralized knowledge base following standardized organization:
+**Primary Technologies:**
+- **Markdown** - Primary documentation format (28+ files)
+- **LaTeX/TeX** - Academic document preparation and presentations
+- **PowerShell/Shell Scripts** - Utility scripts for workflow automation
 
+### Key Directories
+
+**`context/` - Centralized Knowledge Base**
+The heart of the repository following standardized organization:
 - `context/design/` - Technical specifications and architecture diagrams
 - `context/hints/` - Research methodologies and development guides  
 - `context/logs/` - Research session records and findings
@@ -29,20 +36,60 @@ The `context/` directory serves as a centralized knowledge base following standa
 - `context/tasks/` - Current and planned research work items
 - `context/tools/` - Development utilities and analysis scripts
 
+**`analysis/` - Research Analysis**
+- Comprehensive analysis of research papers and findings
+- Source materials and converted markdown documents
+- Technical reports on Gemini Robotics capabilities
+
+**`tex/` - LaTeX Documents**
+- Academic document preparation
+- Presentation slides and formatted reports
+- Research notes and publications
+
+**`scripts/` - Utility Scripts**
+- LaTeX cleanup automation
+- Development workflow helpers
+
 Always check the context directory for existing knowledge before starting new research tasks.
+
+## Development Workflow
+
+### Research Workflow
+1. **Check existing knowledge** in `context/` before starting new tasks
+2. **Track progress** using markdown files in `context/tasks/`
+3. **Document findings** in appropriate `context/` subdirectories
+4. **Update analysis** in `analysis/` directory for comprehensive outputs
+
+### LaTeX Workflow
+- LaTeX documents stored in `tex/` directory
+- **Cleanup command:** Use `scripts/cleanup-pdflatex-temp-files.ps1` (PowerShell) or `scripts/cleanup-pdflatex-temp-files.sh` (Shell) to remove intermediate files
+- When using `pdflatex`, enable tracing back from PDF to LaTeX source code for debugging
+- **Supported file types:** .tex, .pdf, presentation slides, academic papers
+
+### Common Commands
+- **LaTeX cleanup:** `./scripts/cleanup-pdflatex-temp-files.ps1` (removes .aux, .log, .toc, .out, .synctex.gz, etc.)
+- **LaTeX cleanup (Linux/Mac):** `./scripts/cleanup-pdflatex-temp-files.sh`
+- **No build/test commands** - This is a documentation-only repository
 
 ## Development Notes
 
 - This is primarily a research and documentation repository
-- No build tools, test frameworks, or development dependencies are currently configured
+- No build tools, test frameworks, or development dependencies are configured
 - Content focuses on educational exploration of Gemini Robotics technologies
 - The project is not affiliated with Google or DeepMind
+- **Architecture Pattern:** Knowledge-first organization optimized for AI assistant continuity
 
-## LaTeX Development Notes
+## Research Focus Areas
 
-- When using `pdflatex`, make it possible for tracing back from pdf to latex source code
+The project specifically explores:
+- **Gemini Robotics-ER** - Embodied reasoning models for physical world understanding
+- **Gemini Robotics On-Device** - Optimized models for local robotic hardware execution  
+- **Gemini Robotics SDK** - Developer tools and integration frameworks
+- **Complex Task Learning** - Multi-step robotic task execution capabilities
+- **Safety Considerations** - AI safety in robotics applications
 
 ## Key References
 
 - Google DeepMind Blog: https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/
 - Research Paper: https://arxiv.org/abs/2503.20020
+- Research Paper (HTML): https://arxiv.org/html/2503.20020v1
