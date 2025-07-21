@@ -1,0 +1,235 @@
+# LaTeX intermediate files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+# LaTeX bibliography files
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+# LaTeX build files
+*.dvi
+*.xdv
+*-converted-to.*
+*.pdf
+
+# LaTeX editors
+*.backup
+*.bak
+*.sav
+
+# Latexmk
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# LaTeX auxiliary directories
+latex.out/
+
+# TikZ & PGF
+*.figlist
+*.makefile
+*.dpth
+*.md5
+*.auxlock
+
+# Listings
+*.lol
+
+# Changes
+*.soc
+
+# Comment
+*.cut
+
+# Glossaries
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.lzo
+*.lzs
+*.slg
+*.slo
+*.sls
+
+# Acronyms
+*.acn
+*.acr
+*.alg
+
+# Nomenclature
+*.nlo
+*.nls
+
+# Index
+*.idx
+*.ilg
+*.ind
+
+# Biber
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
+# Hyperref
+*.brf
+
+# Knitr
+*-concordance.tex
+*.tikz
+*-tikzDictionary
+
+# Listings
+*.lol
+
+# Makeidx
+*.idx
+*.ilg
+*.ind
+
+# Minitoc
+*.maf
+*.mlf
+*.mlt
+*.mtc[0-9]*
+*.slf[0-9]*
+*.slt[0-9]*
+*.stc[0-9]*
+
+# Minted
+_minted*
+*.pyg
+
+# Morewrites
+*.mw
+
+# Newpax
+*.newpax
+
+# Nomencl
+*.nlg
+*.nlo
+*.nls
+
+# Pax
+*.pax
+
+# PCLtex
+*.pcl
+
+# Sagetex
+*.sagetex.sage
+*.sagetex.py
+*.sagetex.scmd
+
+# Scrwfile
+*.wrt
+
+# Svg
+svg-inkscape/
+
+# Sympy
+*.sout
+*.sympy
+sympy-plots-for-*.tex/
+
+# Pdfcomment
+*.upa
+*.upb
+
+# Pythontex
+*.pytxcode
+pythontex-files-*/
+
+# Tcolorbox
+*.listing
+
+# TikZ & PGF
+*.dpth
+*.figlist
+*.makefile
+
+# Todonotes
+*.tdo
+
+# Vhistory
+*.hst
+*.ver
+
+# Easy-todo
+*.lod
+
+# Xcolor
+*.xcp
+
+# Xmpincl
+*.xmpi
+
+# Xindy
+*.xdy
+
+# Xypic precompiled matrices and outlines
+*.xyc
+*.xyd
+
+# Endfloat
+*.ttt
+*.fff
+
+# TeX engines
+*.lof
+*.lot
+
+# feynmf/feynmp
+*.mf
+*.mp
+*.t[1-9]
+*.t[1-9][0-9]
+*.tfm
+
+# Hyperref
+*.brf
+
+# Kile
+*.backup
+
+# KBibTeX
+*~[0-9]*
+
+# Auto folder when using Sublime Text
+auto/
+
+# Expex forward references with \gathertags
+*-tags.tex
+
+# Standalone packages
+*.sta
+
+# Makeindex log files
+*.lpz
+
+tmp/
+
+# REVTeX puts footnotes in the bibliography by default, unless the nofootinbib
+# option is specified. Footnotes are the stored in a file with suffix Notes.bib.
+# Uncomment the next line to have this generated file ignored.
+#*Notes.bib# pixi environments
+.pixi

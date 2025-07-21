@@ -1,0 +1,1 @@
+convert `https://arxiv.org/html/2503.20020v1` into markdown file, using markdownify mcp, save the result into `reading/gemini-robotics-paper.md`, along with the figures in `reading/gemini-robotics-paper/` subdirectory
