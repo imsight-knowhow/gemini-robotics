@@ -3,8 +3,8 @@ digraph G {
   node [shape=box];
   "User Instruction" -> "Gemini Robotics-ER";
   "Sensor Data (Images, etc.)" -> "Gemini Robotics-ER";
-  "Gemini Robotics-ER" -> "Robot Control API (Code Generation)";
-  "Gemini Robotics-ER" -> "Action Decoder (Direct Control)";
-  "Robot Control API (Code Generation)" -> "Robot";
-  "Action Decoder (Direct Control)" -> "Robot";
+  "Gemini Robotics-ER" -> "[VLM] Call to Tools (e.g.,MCP)";
+  "Gemini Robotics-ER" -> "[VLA] Decoded Actions";
+  "[VLM] Call to Tools (e.g.,MCP)" -> "Robot";
+  "[VLA] Decoded Actions" -> "Robot";
 }

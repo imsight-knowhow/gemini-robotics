@@ -1,0 +1,26 @@
+digraph G {
+  bgcolor="white";
+  node [shape=box, style=rounded];
+  rankdir=LR;
+
+  subgraph cluster_0 {
+    label="Foundation";
+    style="rounded";
+    "Gemini 2.0" [label="Gemini 2.0\n(VLM)"];
+  }
+
+  subgraph cluster_1 {
+    label="Embodied Reasoning";
+    style="rounded";
+    "Gemini Robotics-ER" [label="Gemini Robotics-ER\n(VLM with Embodied Reasoning)"];
+  }
+
+  subgraph cluster_2 {
+    label="Action";
+    style="rounded";
+    "Gemini Robotics" [label="Gemini Robotics\n(VLA)"];
+  }
+
+  "Gemini 2.0" -> "Gemini Robotics-ER" [label=" trained into"];
+  "Gemini Robotics-ER" -> "Gemini Robotics" [label=" fine-tuned into"];
+}

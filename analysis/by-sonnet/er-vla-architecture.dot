@@ -1,0 +1,46 @@
+digraph er_vla_architecture {
+    rankdir=TB;
+    node [shape=box, style=filled, fontname="Arial", fontsize=10];
+    edge [fontname="Arial", fontsize=9];
+    
+    // Foundation
+    gemini20 [label="Gemini 2.0\n(Foundation Model)", fillcolor=lightblue, shape=ellipse];
+    
+    // ER Model
+    er_model [label="Gemini Robotics-ER\n(VLM + Embodied Reasoning)", fillcolor=lightgreen];
+    
+    // VLA Components
+    vla_backbone [label="VLA Backbone\n(Distilled ER)\nCloud-hosted", fillcolor=yellow];
+    action_decoder [label="Local Action Decoder\n(On-robot)\n~250ms latency", fillcolor=orange];
+    vla_complete [label="Gemini Robotics\n(Complete VLA)\n50Hz control", fillcolor=pink];
+    
+    // Relationships
+    gemini20 -> er_model [label="Enhanced with\nEmbodied Reasoning", color=blue];
+    er_model -> vla_backbone [label="Distilled +\nOptimized\n(seconds → 160ms)", color=red];
+    vla_backbone -> vla_complete [label="High-level\nReasoning"];
+    action_decoder -> vla_complete [label="Low-level\nActions"];
+    er_model -> action_decoder [label="Reasoning\nCapabilities", style=dashed, color=purple];
+    
+    // Grouping
+    subgraph cluster_vla {
+        label="Gemini Robotics VLA System";
+        style=dashed;
+        color=red;
+        vla_backbone;
+        action_decoder;
+        vla_complete;
+    }
+    
+    // Legend
+    subgraph cluster_legend {
+        label="Model Types";
+        style=solid;
+        color=black;
+        legend1 [label="Foundation Model", fillcolor=lightblue, shape=ellipse];
+        legend2 [label="VLM (Vision-Language)", fillcolor=lightgreen];
+        legend3 [label="VLA Components", fillcolor=yellow];
+        legend4 [label="Final VLA Model", fillcolor=pink];
+        
+        legend1 -> legend2 -> legend3 -> legend4 [style=invis];
+    }
+}

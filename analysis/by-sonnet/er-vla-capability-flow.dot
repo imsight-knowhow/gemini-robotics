@@ -1,0 +1,54 @@
+digraph capability_flow {
+    rankdir=LR;
+    node [shape=ellipse, style=filled, fontname="Arial", fontsize=10];
+    edge [fontname="Arial", fontsize=9];
+    
+    // ER Capabilities
+    subgraph cluster_er {
+        label="ER Model Capabilities";
+        style=solid;
+        color=blue;
+        fillcolor=lightblue;
+        style=filled;
+        
+        spatial [label="Spatial\nUnderstanding\n(3D perception)", fillcolor=lightblue];
+        objects [label="Object Detection\n& Pointing\n(2D/3D)", fillcolor=lightblue];
+        physics [label="Physics\nUnderstanding\n(Intuitive physics)", fillcolor=lightblue];
+        world [label="World\nKnowledge\n(Internet-scale)", fillcolor=lightblue];
+        trajectory [label="Trajectory\nPrediction", fillcolor=lightblue];
+        affordance [label="Affordance\nUnderstanding", fillcolor=lightblue];
+    }
+    
+    // Bridging
+    reasoning [label="Embodied\nReasoning\nIntegration", fillcolor=yellow, shape=diamond];
+    
+    // VLA Capabilities
+    subgraph cluster_vla {
+        label="VLA Model Capabilities";
+        style=solid;
+        color=red;
+        fillcolor=lightcoral;
+        style=filled;
+        
+        control [label="Direct Robot\nControl\n(End-to-end)", fillcolor=lightcoral];
+        dexterity [label="Dexterous\nManipulation\n(Bi-manual)", fillcolor=lightcoral];
+        realtime [label="Real-time\nExecution\n(50Hz)", fillcolor=lightcoral];
+        adaptation [label="Multi-embodiment\nAdaptation", fillcolor=lightcoral];
+        generalization [label="Zero-shot\nGeneralization", fillcolor=lightcoral];
+    }
+    
+    // Flow from ER to Reasoning
+    spatial -> reasoning [color=blue];
+    objects -> reasoning [color=blue];
+    physics -> reasoning [color=blue];
+    world -> reasoning [color=blue];
+    trajectory -> reasoning [color=blue];
+    affordance -> reasoning [color=blue];
+    
+    // Flow from Reasoning to VLA
+    reasoning -> control [color=red];
+    reasoning -> dexterity [color=red];
+    reasoning -> realtime [color=red];
+    reasoning -> adaptation [color=red];
+    reasoning -> generalization [color=red];
+}

@@ -1,0 +1,53 @@
+digraph training_flow {
+    rankdir=TB;
+    node [shape=box, style=filled, fontname="Arial", fontsize=10];
+    edge [fontname="Arial", fontsize=9];
+    
+    // Data Sources
+    subgraph cluster_data {
+        label="Training Data Sources";
+        style=dashed;
+        color=gray;
+        
+        internet [label="Internet-scale\nMultimodal Data\n(Images, Text, Video)", fillcolor=lightgray];
+        er_data [label="Embodied Reasoning\nDatasets\n(ERQA benchmark)", fillcolor=lightgray];
+        vqa_data [label="Visual Question\nAnswering Data", fillcolor=lightgray];
+        robot_data [label="Robot Action\nDataset\n(Thousands of hours\nALOHA 2 demos)", fillcolor=lightgray];
+    }
+    
+    // Training Processes
+    er_training [label="ER Model Training\n(Gemini 2.0 + ER data)", fillcolor=lightgreen, shape=diamond];
+    vla_training [label="VLA Model Training\n(ER model + Action data)", fillcolor=lightcoral, shape=diamond];
+    
+    // Final Models
+    subgraph cluster_models {
+        label="Final Models";
+        style=solid;
+        color=black;
+        
+        er_final [label="Gemini Robotics-ER\n(VLM)\n• Spatial understanding\n• Object detection\n• Physics reasoning", fillcolor=green];
+        vla_final [label="Gemini Robotics\n(VLA)\n• Direct robot control\n• Real-time execution\n• Dexterous manipulation", fillcolor=red];
+    }
+    
+    // Specialization
+    specialization [label="Optional Specialization\n• Long-horizon tasks\n• New embodiments\n• Enhanced reasoning", fillcolor=purple];
+    
+    // Data Flow to ER Training
+    internet -> er_training [color=blue];
+    er_data -> er_training [color=blue];
+    vqa_data -> er_training [color=blue];
+    er_training -> er_final [color=green];
+    
+    // Data Flow to VLA Training
+    internet -> vla_training [style=dashed, color=gray, label="Also used"];
+    robot_data -> vla_training [color=red];
+    er_final -> vla_training [label="Inherits\nCapabilities", color=blue, penwidth=3];
+    vla_training -> vla_final [color=red];
+    
+    // Specialization Flow
+    vla_final -> specialization [label="Fine-tuning", style=dashed];
+    
+    // Key Insight
+    key_insight [label="Key Insight:\nVLA builds on ER\nrather than replacing it", fillcolor=yellow, shape=note];
+    er_final -> key_insight [style=invis];
+}

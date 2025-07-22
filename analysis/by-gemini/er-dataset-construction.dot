@@ -1,0 +1,50 @@
+digraph G {
+    bgcolor="white";
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fillcolor=lightgrey];
+
+    subgraph cluster_sources {
+        label="Indicative Data Sources";
+        style="rounded";
+        fillcolor="lightblue";
+        node [fillcolor=white];
+        src_oxe [label="OXE\n(Robotic Learning)"];
+        src_umi [label="UMI Data"];
+        src_meccano [label="MECCANO\n(Egocentric)"];
+        src_holo [label="HoloAssist\n(Human Interaction)"];
+        src_gaze [label="EGTEA Gaze+\n(First-person Video)"];
+    }
+
+    subgraph cluster_raw_data {
+        label="Raw Data Types";
+        style="rounded";
+        fillcolor="lightyellow";
+        node [fillcolor=white];
+        data_images [label="Images"];
+        data_text [label="Original Captions"];
+        data_robot [label="Robot Sensor/Action Data"];
+    }
+    
+    subgraph cluster_augmentation {
+        label="Augmentation Process";
+        style="rounded";
+        fillcolor="lightgreen";
+        node [fillcolor=white];
+        aug_gemini [label="Gemini Model"];
+        aug_flexcap [label="FlexCap Model"];
+        synthetic_captions [label="Synthetic Captions", shape=document, fillcolor=yellow];
+    }
+
+    final_dataset [label="Final Training Dataset\nfor Gemini Robotics-ER", shape=cylinder, style="filled", fillcolor=orange];
+
+    {src_oxe, src_umi, src_meccano, src_holo, src_gaze} -> data_images;
+    data_images -> aug_gemini;
+    data_images -> aug_flexcap;
+    aug_gemini -> synthetic_captions;
+    aug_flexcap -> synthetic_captions;
+
+    data_images -> final_dataset;
+    data_text -> final_dataset;
+    data_robot -> final_dataset;
+    synthetic_captions -> final_dataset;
+}
