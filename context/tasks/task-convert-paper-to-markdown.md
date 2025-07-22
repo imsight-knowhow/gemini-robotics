@@ -1,0 +1,1 @@
+`tmp/paper-source` contains the html source of the paper, convert it into markdown file, using `pandoc` commands, and save the result into `reading/gemini-robotics-paper.md

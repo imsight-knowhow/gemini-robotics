@@ -3,14 +3,10 @@
     "allow": [
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(mkdir:*)",
+      "Bash(git checkout:*)",
       "Bash(git push:*)",
-      "mcp__markdownify__webpage-to-markdown",
-      "Bash(chmod:*)",
-      "WebFetch(domain:arxiv.org)",
-      "mcp__markdownify__pdf-to-markdown",
-      "Bash(powershell:*)",
-      "Bash(find:*)",
-      "Bash(git add:*)"
+      "mcp__npx__pdf-to-markdown",
+      "Bash(pandoc:*)"
     ],
     "deny": []
   }

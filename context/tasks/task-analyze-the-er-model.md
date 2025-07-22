@@ -1,0 +1,1 @@
+based on `reading/keypoints/gemini-robotics-er-template.md`, and the paper `reading/source-paper/gemini-robotics-paper.md`, create a new file `reading/keypoints/gemini-robotics-er.md` that gives detail information of the key points of the Gemini Robotics ER model, you can also find info online if needed.
